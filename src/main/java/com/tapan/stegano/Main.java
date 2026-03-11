@@ -1,7 +1,17 @@
 package com.tapan.stegano;
 
+import com.tapan.stegano.gui.MainWindow;
+import javax.swing.*;
+
+/**
+ * Entry point — launches the Stegano GUI.
+ */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Image Steganography GUI project initialized");
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception ignored) {}
+
+        SwingUtilities.invokeLater(() -> new MainWindow().setVisible(true));
     }
 }
